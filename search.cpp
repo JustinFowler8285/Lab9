@@ -107,7 +107,7 @@ int main(){
 
     // test elements to search for (leave as is)
     vector<int> elem_to_find;
-    vecGen("tect_elem.csv", elem_to_find);
+    vecGen("test_elem.csv", elem_to_find);
 
 
     // reads through all 1o of the test_elem values and calls iterative search
