@@ -20,11 +20,11 @@ int iterativeSearch(vector<int>v, int elem){
 
             return i;
         }
-        return -1;
     }
-    // us a for loop where the ind3x, i goes from 0 to the size of v
+    return -1;
+    // us a for loop where the index, i goes from 0 to the size of v
 
-    // inside the for loop, use an if statement to check whetehr the element at i (e.g. v[i]) equals elem
+    // inside the for loop, use an if statement to check whether the element at i (e.g. v[i]) equals elem
     // inside the if statement return i
 
     // outside of the for loop return -1
@@ -132,6 +132,20 @@ int main(){
     // repeat the for loop above so that it records the time
     // it takes for binarySearch to do the same operation
 
+    for(int i = 0; i < elem_to_find.size(); i++) {
+        // gets the elem to search for 
+        int elem = elem_to_find[i];
 
+        // stopwatches the time
+        clock_t start = clock();                       // start time
+        int index_if_found = binarySearch(v, 0, v.size(), elem); // call search
+        clock_t end = clock();                         // end time
+
+        // calculates the total time it took in seconds
+        double elapsed_time_in_sec = (double(end - start)/CLOCKS_PER_SEC);
+
+        //prints the index and how long it took to find it
+        cout << index_if_found << ": " << elapsed_time_in_sec << endl;
+    }
 
 }
